@@ -83,10 +83,7 @@ class Combiner {
 				call_user_func($this->checkpointer,$result);
 			}
 			if(!$result['success']) {
-				/**
-				* @todo we need to kill this process osmehow
-				*/
-				exit();
+				throw new \Exception("Could not put message on bus - result is: " . $result);
 			} 
 		}
 	}
