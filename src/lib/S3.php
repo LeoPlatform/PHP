@@ -80,7 +80,7 @@ class S3IteratorV1 implements \Iterator{
 		$this->offset += count($this->cached);
 		if($this->position < $this->opts['limit'] && (new \DateTime()) < $this->opts['end_time']) {
 			$current = $this->s3Indexes[$this->s3Position];
-			var_dump($current);
+			var_dump($current); // @todo - This should output based on cli vs apache usage
 			$result = $this->client->getObject([
 			    'Bucket' => 'leo-s3bus-1r0aubze8imm5',
 			    'Key' => $current['key'],
@@ -118,7 +118,7 @@ class S3IteratorV1 implements \Iterator{
 	public function next() {
 		++$this->position;
 		if(count($this->cached) && ($this->position - $this->offset) >= count($this->cached)) {
-			var_dump("need to load more");
+			var_dump("need to load more"); // @todo - This should output based on cli vs apache usage
 			++$this->s3Position;
 			$this->load();
 		}

@@ -56,8 +56,10 @@ class Firehose extends Uploader{
 			]);
 
 			if($retries > 0) {
+                // @todo - This should output based on cli vs apache usage
 				print "\tRetrying(#{$retries}) {$cnt} records of size ({$len}) in " . (microtime(true) - $time_start) . " seconds\n";
 			} else {
+                // @todo - This should output based on cli vs apache usage
 				print "\tSent {$cnt} records of size ({$len}) in " . (microtime(true) - $time_start) . " seconds\n";
 			}
 			$hasErrors = $result->get('FailedPutCount') == 0;
@@ -65,7 +67,7 @@ class Firehose extends Uploader{
 				$batch['records'] = [];
 			} else { //we need to prune the ones that went through
 				$responses = $result->get("RequestResponses");
-				var_dump($responses);
+				var_dump($responses); // @todo - This should output based on cli vs apache usage
 				$maxCompleted = -1;
 				foreach($responses as $i=>$response) {
 					if(isset($response['RecordId'])) {

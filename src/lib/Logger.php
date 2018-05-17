@@ -72,7 +72,7 @@ class Logger {
 		$this->opts = $opts;
 		$this->id = $id;
 		$this->client = new CloudWatchLogsClient([
-			"region"=>"us-west-2",
+			"region"=>"us-west-2", // @todo - Should this be hard-coded or an opt?
 			"version"=>"2014-03-28",
 			'http'    => [
 				'verify' => false
