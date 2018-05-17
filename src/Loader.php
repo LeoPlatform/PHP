@@ -37,7 +37,7 @@ class Loader {
 		$reader = $events->getEventReader($queue, $events->getEventRange($this->id, $queue,$opts),$opts);
 
 		$stream = $this->createBufferedWriteStream($opts, function ($checkpointData,$leoCheckpoint) {
-			var_dump($checkpointData);
+            var_dump($checkpointData); // @todo - This should output based on cli vs apache usage
 		});
 		foreach($reader->events as $count=>$event) {
 			$result = $transformFunc($event, null);

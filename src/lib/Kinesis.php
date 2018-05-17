@@ -47,7 +47,7 @@ class Kinesis extends Uploader{
 				$cnt += $record['cnt'];
 				$len += $record['length'];
 			}
-			var_dump($this->id);
+			var_dump($this->id); // @todo - This should output based on cli vs apache usage
 			$result = $this->client->putRecords([
 				'StreamName' => $this->stream,
 				'Records' => array_map(function($record) {
@@ -60,8 +60,10 @@ class Kinesis extends Uploader{
 			]);
 
 			if($retries > 0) {
+                // @todo - This should output based on cli vs apache usage
 				print "\tRetrying(#{$retries}) {$cnt} records of size ({$len}) in " . (microtime(true) - $time_start) . " seconds\n";
 			} else {
+                // @todo - This should output based on cli vs apache usage
 				print "\tSent {$cnt} records of size ({$len}) in " . (microtime(true) - $time_start) . " seconds\n";
 			}
 			$hasErrors = $result->get('FailedRecordCount') == 0;

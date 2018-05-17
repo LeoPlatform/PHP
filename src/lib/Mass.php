@@ -73,7 +73,7 @@ class Mass extends Uploader{
 		fclose($handler);
 		//unlink($this->tempFile);
 
-		var_dump($this->tempFile);
+		var_dump($this->tempFile); // @todo - This should output based on cli vs apache usage
 
 
 		$this->uploader->end();

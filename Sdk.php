@@ -25,7 +25,7 @@ class Sdk {
 	public function __construct($id, $opts) {
 		$this->id = $id;
 		$this->config = array_merge([
-			"region"=>"us-west-2",
+			"region"=>null,
 			"firehose"=>null,
 			"kinesis"=>null,
 			"s3"=>null,
