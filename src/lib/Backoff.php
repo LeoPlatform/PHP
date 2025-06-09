@@ -3,10 +3,10 @@
 namespace Leo\lib;
 
 /**
- * Class backoff
+ * Class Backoff
  * @package Leo\lib
  */
-class backoff
+class Backoff
 {
 	/**
 	 * @var int
@@ -26,7 +26,7 @@ class backoff
 	private $currentDelayIncrement = 0;
 
 	/**
-	 * backoff constructor.
+	 * Backoff constructor.
 	 * @param int $initialDelay
 	 * @param int $maxDelay
 	 */

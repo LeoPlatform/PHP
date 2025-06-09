@@ -28,7 +28,7 @@ class Kinesis extends Uploader
 	public function __construct($id, $config, $opts = []) // opts is not passed in
 	{
 		// ready the backoff
-		$this->backoff = new backoff();
+		$this->backoff = new Backoff();
 
 		$this->id = $id;
 		$this->opts = array_merge([
