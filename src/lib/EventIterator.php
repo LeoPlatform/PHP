@@ -1,9 +1,11 @@
 <?php
-namespace Leo\Lib;
+namespace Leo\lib;
 
 class EventIterator {
+
 	/**
 	*@var Iterator
 	*/
 	public $events;
+
 }
