@@ -16,7 +16,7 @@ class Stream {
 		],$opts);
 
 		$this->config = array_merge([
-			"region"=>"us-west-2",
+			"region"=>"us-west-2", // @todo - Should this be hard-coded or an opt?
 			"firehose"=>null,
 			"kinesis"=>null,
 			"s3"=>null
