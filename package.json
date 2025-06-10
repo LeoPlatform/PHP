@@ -1,6 +1,6 @@
 {
   "name": "php-sdk",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "Test the php code",
   "main": "test.js",
   "directories": {
