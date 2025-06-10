@@ -1,6 +1,6 @@
 {
   "name": "leoplatform/php",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "SDK for Leo Innovation Platform",
   "require": {
     "php": ">=5.6.0",
